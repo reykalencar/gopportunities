@@ -10,6 +10,7 @@ var (
 )
 
 func main() {
+
 	logger = config.GetLogger("main")
 	//Initialize Configs
 	err := config.Init()
@@ -18,5 +19,6 @@ func main() {
 		return
 	}
 
+	// Initialize Router
 	router.Initialize()
 }
