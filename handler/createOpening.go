@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/reykalencar/gopportunities/schemas"
 )
 
 func CreateOpeningHandler(ctx *gin.Context) {
@@ -17,10 +18,20 @@ func CreateOpeningHandler(ctx *gin.Context) {
 		return
 	}
 
-	if err := db.Create(&request).Error; err != nil {
+	opening := schemas.Opening{
+		Company:  request.Company,
+		Role:     request.Role,
+		Location: request.Location,
+		Remote:   *request.Remote,
+		Link:     request.Link,
+		Salary:   request.Salary,
+	}
+
+	if err := db.Create(&opening).Error; err != nil {
 		logger.Errorf("error creating opening: %v", err.Error())
+		sendError(ctx, http.StatusInternalServerError, "error creating openin on database")
 		return
 	}
 
-	// 2:29:32
+	sendSuccess(ctx, "create-opening", opening)
 }
