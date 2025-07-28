@@ -41,7 +41,7 @@ You will need to have [Go](https://go.dev/doc/install) (version 1.19 or higher) 
 
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/reykalencar/gopportunities.git](https://github.com/reykalencar/gopportunities.git)
+    git clone https://github.com/reykalencar/gopportunities.git
     ```
 
 2.  Navigate to the project directory:
