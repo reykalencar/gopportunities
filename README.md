@@ -31,6 +31,8 @@ This project was built using the following technologies:
 
 Follow the instructions below to run the project in your local environment.
 
+
+
 ### Prerequisites
 
 You will need to have [Go](https://go.dev/doc/install) (version 1.19 or higher) installed on your machine.
@@ -58,6 +60,30 @@ You will need to have [Go](https://go.dev/doc/install) (version 1.19 or higher) 
     ```
 
 The API will be running at `http://localhost:8080`.
+
+## 🐳 Running with Docker
+
+As an alternative to a local installation, you can run the project in an isolated environment using Docker.
+
+### Prerequisites
+
+-   [Docker](https://docs.docker.com/get-docker/) installed on your machine.
+
+### Steps
+
+1.  After cloning the repository, navigate to the project's root folder.
+
+2.  Build the Docker image with the following command:
+    ```bash
+    docker build -t gopportunities .
+    ```
+
+3.  Once the image is built, run the container:
+    ```bash
+    docker run -p 8080:8080 gopportunities
+    ```
+
+The API will be ready and accessible at `http://localhost:8080`.
 
 ## 📖 API Usage
 
